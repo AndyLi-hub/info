@@ -17,4 +17,7 @@ public interface UserDao {
     List<User> queryAllUser();
 
     User checkUserId(String userid);
+
+    //新規
+    boolean regeditOK(User user);
 }

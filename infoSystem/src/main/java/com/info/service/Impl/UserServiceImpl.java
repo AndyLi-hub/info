@@ -34,4 +34,9 @@ public class UserServiceImpl implements UserService {
     public User checkUserId(String userid) {
         return userDao.checkUserId(userid);
     }
+
+    @Override
+    public boolean regeditOK(User user) {
+        return userDao.regeditOK(user);
+    }
 }

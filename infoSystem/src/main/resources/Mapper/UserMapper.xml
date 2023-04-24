@@ -23,4 +23,10 @@
         SELECT * FROM user_admin ;
     </select>
 
+    <select id="regeditOK" resultType="com.info.entity.User">
+        INSERT INTO user_admin (UserId, password, Mail,PkId)
+        VALUES (#{UserId}, #{password}, #{Mail},#{PkId})
+    </select>
+
+
 </mapper>

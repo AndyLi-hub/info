@@ -15,4 +15,7 @@ public interface UserService {
     List<User> queryAllUser();
 
     User checkUserId(String userid);
+
+    //新規
+    boolean regeditOK(User user);
 }
