@@ -1,178 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/html">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Users</title>
-
-    <link rel="stylesheet"
-          href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-
-
-    <script
-            src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-
-
-    <script
-            src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        html {
-            height: 100%;
-        }
-
-        * {
-            margin: 0px;
-            padding: 0px;
-            /* height: 100%; */
-            width: 100%;
-        }
-
         body {
-            height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg') no-repeat;
+            background-size: 100% 130%;
         }
 
-        .intro {
-            width: 100%;
-            height: 100%;
-            background:
-                    url("https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG5Bn3DxYLYALg8Tg4zrToQ4DpyRSzlqbexxN2MThG6du98b4dMqffZSeJFRvUS9RHbV_UbaDIG6l3hnWKX9C4PPg_Fe_2knuOCnwiO1frt2qE-JMdfpJpYu4U5p-M0D9RTdqSk4vkrmHb0o0utxHQXSM1Z2JR1Lyy1DHZligjhHRSeQITI3e9DwqhSCjgDnsIUaVyPM2oMOzO7OqapMlEaCE0p5TfX8PEcoRZw5CXV8XPxU4Udbg-b0wR_J9Ay5ZZxN_pqeL-NRiTTmXrdja0NSQ55lzJKvvN2KFM5AJpnBwye5hEZ9q__E8R9j300VKgHorDSA7znHCrngoV_Pc_QQwS1Il8L7wisB3lmh-na4ucb4ax5xyXvz_ehOOVCnUuCN1e2TChCVKDZodH-VyRqA=/minimalist-office-desk-workspace-background-with-camera-decor-copy-space-white-background_67155-18726.jpg?errorImage=false");
-            /* background-color: plum; */
-            background-size: cover;
-            background-repeat: no-repeat;
-            display: table;
-            top: 0;
-        }
-
-        .inner {
-            position: absolute;
-            top: 100px; /* 从顶部向下偏移 50px */
-            left: 50px; /* 从左侧向右偏移 100px */
-            display: table-cell;
-            vertical-align: middle;
-            width: 100%;
-        }
-
-        .content {
-            width: 26vw;
-            height: 62vh;
-            background: rgba(255, 255, 255, 0.39);
+        #login_box {
+            width:25%;
+            height: 400px;
+            background-color: #00000060;
             margin: auto;
-            border-radius: 1%;
-            display: table;
-        }
-
-        .photo {
-            display: table-cell;
-            width: 42%;
-            height: 37%;
-            margin: auto;
-            border: 2px solid #726B6B;
-            border-radius: 100%;
-        }
-
-        .input1 {
-            display: table-cell;
-            margin-left: 3.5vw;
-            margin-top: 6vh;
-            padding: 1% 1% 1% 10%;
-            background:
-                    url("https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGx5cm8knTLo61O84kVTxOan841a30-aIJSoqkmlQNsP4-Qv0KVqX9M9vYFUiwJk7TQAZ1kFP3j-ATlra5GRtL7VHwzhA20D8BAX3G6eI_BFDaE4-W9uPEB76D8ZD-3inzKZVocCvfQ7mIVyVReX7oW2kRxTihS2iJlsQhfqf4F12uz_by7eN1w1rq26GBxdBtgl3N4F9IXg_MnA-msKLcCml56AWkywU14wE9nWoX4eb/Sample_User_Icon.png?errorImage=false");
-            background-size: contain;
-            background-repeat: no-repeat;
-            border: 0px;
-            border-bottom: 1px solid white;
-            width: 19.5vw;
-        }
-
-        .input2 {
-            display: table-cell;
-            margin-left: 3.5vw;
-            margin-top: 6vh;
-            padding: 4% 4% 1% 25%;
-            background:
-                    url("https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGx5cm8knTLo61O84kVTxOan841a30-aIJSoqkmlQNsP4-Qv0KVqX9M9vYFUiwJk7TQAZ1kFP3j-ATlra5GRtL7VHwzhA20D8BAX3G6eI_BFDaE4-W9uPEB76D8ZD-3inzKZVocCvfQ7mIVyVReX7oW2kRxTihS2iJlsQhfqf4F12uz_by7eN1w1rq26GBxdBtgl3N4F9IXg_MnA-msKLcCml56AWkywU14wE9nWoX4eb/Sample_User_Icon.png?errorImage=false");
-            background-size: contain;
-            background-repeat: no-repeat;
-            border: 0px;
-            border-bottom: 1px solid white;
-            width: 19.5vw;
-            font-size: 20px;
-        }
-
-        .input1[placeholder] {
-            padding-left: 23%;
-            font-family: 'Labster';
-            font-size: 1.9vw;
-        }
-
-        .btn {
-            text-decoration: none;
-            display: table;
+            margin-top: 10%;
             text-align: center;
-            margin-top: 6%;
-            height: 8vh;
-            padding: 7% 0% 3% 0%;
-            background: #12e553;
-            /* font-family: 'Lobster'; */
-            font-size: 1.8vw;
-            color: #0D0707;
+            border-radius: 10px;
+            padding: 50px 50px;
         }
-        #mail{
-            text-align: center;
-        }
-        #password{
-            text-align: center;
-        }
-        #login{
-            background-color: #4CAF50;
-        }
-        .error-message {
-            color: red;
-            left: 650px; /* 从左侧向右偏移 100px */
-            position: absolute;
-            top: 430px; /* 从顶部向下偏移 50px */
 
+        h2 {
+            color: #ffffff90;
+            margin-top: 5%;
+        }
+
+        #input-box {
+            margin-top: 5%;
+        }
+
+        span {
+            color: #fff;
+        }
+
+        input {
+            border: 0;
+            width: 60%;
+            font-size: 15px;
+            color: #fff;
+            background: transparent;
+            border-bottom: 2px solid #fff;
+            padding: 5px 10px;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 50px;
+            width: 60%;
+            height: 30px;
+            border-radius: 10px;
+            border: 0;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            font-size: 15px;
+            background-image: linear-gradient(to right, #30cfd0, #330867);
+        }
+
+        #sign_up {
+            margin-top: 45%;
+            margin-left: 60%;
+        }
+
+        a {
+            color: #b94648;
         }
     </style>
-
 </head>
 
-
-
 <body>
-
-<div class="error-message" th:if="${error}" th:text="${error}"></div>
-
-
-<!--<form th:action="@{/loginIn}" method="post">
-
-    <input type="submit" value="登录">-->
-</form>
-<section class="intro">
-    <form role="form" action="/loginIn" method="post"
-          class="centered-form">
-        <div class="inner">
-            <h1
-                    style="text-align: center; padding-bottom: 20px; font-size: xx-large;">サンコム個人情報研修システム</h1>
-            <div class="content">
-
-
-                <img
-                        src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGwXU83Zm3Ms-OQlxOPPYRAynhqNgQfjJCDZ44CoLX4O7-kZEGrSo4YbjnaPyS2O980LEdkurs_sS9kxc3dgf80hGlcjzNqDDszuzqmqTJRGgOcl27dTrmMQe6rE96MzexCvkTfqCr4mfKiglnFjs_CBR3WNuepsHXxqUaO9fLXLLMkxN6_AFae1CPzV8XLzIzQ==/Admin-Profile-Vector-PNG.png?errorImage=false"
-                        class="photo">
-                <input type="text" id="mail" name="userid"
-                       placeholder="管理者ID" > <br> <br>
-
-                <input type="password" id="password" name="password" placeholder="パスワード"> <br> <br><br>
-                <input type="submit" id="login" value="登録">
-            </div>
-
-        </div>
-    </form>
-</section>
+<div id="login_box">
+    <h2>サンコム個人情報研修システム</h2>
+    <div id="input_box">
+        <input type="text" placeholder="管理者ID">
+    </div>
+    <div class="input_box">
+        <input type="password" placeholder="パスワード">
+    </div>
+    <button>登录</button><br>
+</div>
 </body>
-
 </html>
+
