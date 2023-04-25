@@ -8,11 +8,8 @@ public class User {
 
 
     private String UserId;
-
     private String Password;
-
     private String Mail;
-
     private int PkId;
 
 }
