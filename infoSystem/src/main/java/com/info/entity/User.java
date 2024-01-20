@@ -12,4 +12,7 @@ public class User {
     private String Mail;
     private int PkId;
 
+    private int  phone;
+    
+
 }
