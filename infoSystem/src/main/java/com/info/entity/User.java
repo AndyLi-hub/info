@@ -13,6 +13,9 @@ public class User {
     private int PkId;
 
     private int  phone;
+
+    /* add -dianhua */
+    private int  dianhua;
     
 
 }
