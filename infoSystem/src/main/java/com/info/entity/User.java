@@ -13,6 +13,10 @@ public class User {
     private int PkId;
 
     private int  phone;
+
+    /* li-add */
+    private String about;
+
     
 
 }
